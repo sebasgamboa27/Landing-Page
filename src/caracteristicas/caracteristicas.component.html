@@ -1,0 +1,10 @@
+<section class="caracteristicas">
+  <h2 class="section-title" appAnimate>Nuestras Soluciones</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let card of cards" appAnimate>
+      <div class="card-icon">{{ card.icon }}</div>
+      <h3 class="card-title">{{ card.title }}</h3>
+      <p class="card-text">{{ card.text }}</p>
+    </div>
+  </div>
+</section>

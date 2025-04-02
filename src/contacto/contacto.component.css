@@ -1,0 +1,36 @@
+.contacto {
+  .info-card {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    i {
+      width: 40px;
+      text-align: center;
+    }
+  }
+
+  .form-control {
+    border-radius: 10px;
+    padding: 1.2rem;
+    border: 2px solid #e9ecef;
+    
+    &:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 10px rgba(76,175,80,0.25);
+    }
+  }
+
+  .btn {
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      letter-spacing: 1px;
+    }
+  }
+}

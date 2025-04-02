@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" (click)="scrollTo('hero')">
+      <img src="assets/images/logo.jpg" alt="Logo" width="40" class="me-2">
+      Energía Verde
+    </a>
+    <button class="navbar-toggler" 
+            type="button" 
+            (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('hero')">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('caracteristicas')">Soluciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('proyectos')">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('contacto')">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
