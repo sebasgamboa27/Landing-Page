@@ -1,70 +1,48 @@
 .navbar {
-  padding: 1rem 0;
-  transition: background-color 0.3s ease;
-
-  &.navbar-dark {
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-  }
-
-  .navbar-toggler {
-    border: none;
-    padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  
+  .navbar-brand {
+    font-weight: 700;
+    color: var(--dark) !important;
     
-    &:focus {
-      box-shadow: none;
+    img {
+      transition: transform 0.3s ease;
     }
-
-    .navbar-toggler-icon {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 24px;
-      width: 30px;
-      
-      .hamburger-bar {
-        height: 3px;
-        width: 100%;
-        background: white;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-        transform-origin: left center;
-      }
-    }
-
-    &[aria-expanded="true"] {
-      .hamburger-bar {
-        &:nth-child(1) {
-          transform: rotate(45deg) translate(4px, -1px);
-        }
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate(4px, 1px);
-        }
-      }
+    
+    &:hover img {
+      transform: rotate(-15deg);
     }
   }
 
   .nav-link {
+    color: var(--dark) !important;
     position: relative;
-    margin: 0 1rem;
-    cursor: pointer;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     
-    &::after {
+    &:hover {
+      background: rgba(var(--primary), 0.1);
+      color: var(--primary) !important;
+    }
+    
+    &::before {
       content: '';
       position: absolute;
+      bottom: 0;
+      left: 50%;
       width: 0;
       height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #4CAF50;
-      transition: width 0.3s ease;
+      background: var(--primary);
+      transition: all 0.3s ease;
     }
-
-    &:hover::after {
-      width: 100%;
+    
+    &:hover::before {
+      width: 80%;
+      left: 10%;
     }
   }
 }
