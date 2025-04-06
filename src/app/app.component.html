@@ -8,82 +8,163 @@
   </div>
 </section>
 
-<!-- Sección Perfil -->
+<!-- Sección Perfil del Parque - Versión Flexible -->
 <section id="perfil" class="section py-5">
   <div class="container">
     <h2 class="text-center mb-5 animate-on-scroll">Perfil del Parque</h2>
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <img src="assets/images/perfil.jpg" alt="Vista aérea del parque" class="img-fluid rounded shadow">
+    <div class="row align-items-stretch g-4">
+      <!-- Columna de Imagen -->
+      <div class="col-lg-6">
+        <div class="image-container h-100 animate-on-scroll">
+          <img src="assets/images/perfil.jpg" alt="Vista del parque" 
+               class="img-fluid rounded-3 shadow" 
+               style="object-fit: cover; min-height: 300px;">
+        </div>
       </div>
-      <div class="col-md-6 mt-4 mt-md-0">
-        <p class="lead">Ubicado en Bagaces, Guanacaste, el Parque Eólico Fila de Mogote...</p>
-        <div class="stats-box">
-          <h3><span class="counter">33</span> Aerogeneradores</h3>
-          <h3><span class="counter">50</span> MW de capacidad</h3>
+
+      <!-- Columna de Texto Ajustable -->
+      <div class="col-lg-6">
+        <div class="text-content h-100 d-flex flex-column animate-on-scroll">
+          <!-- Contenedor de Texto con Scroll -->
+          <div class="flex-grow-1 overflow-auto pe-3" style="max-height: 400px;">
+            <p class="lead mb-4 adaptive-text">
+              {{ texto_perfil }}
+            </p>
+          </div>
+
+          <!-- Estadísticas Flexibles -->
+          <div class="stats-box mt-auto">
+            <div class="row g-2">
+              <div class="col-6">
+                <div class="stat-item p-3 bg-light rounded">
+                  <h3 class="mb-0">33</h3>
+                  <small>Aerogeneradores</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-item p-3 bg-light rounded">
+                  <h3 class="mb-0">50</h3>
+                  <small>MW Capacidad</small>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="estrategia" class="section-bg py-5">
+<!-- Sección Proyectos -->
+<section id="proyectos" class="section py-5">
   <div class="container">
-    <h2 class="text-center mb-5 animate-on-scroll">Estrategia Operativa</h2>
+    <h2 class="text-center mb-5 animate-on-scroll">Proyectos en Desarrollo</h2>
     <div class="row g-4">
-      <!-- Fortalezas -->
+      <!-- Proyecto Venfort -->
       <div class="col-md-4">
         <div class="card h-100 animate-on-scroll">
-          <div class="card-header bg-primary text-white">
-            <h4><i class="fas fa-shield-alt me-2"></i>Fortalezas</h4>
-          </div>
+          <img src="assets/images/proyecto-venfort.jpg" class="card-img-top" alt="Proyecto Venfort">
           <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Ubicación privilegiada con vientos de 8.5 m/s promedio</li>
-              <li class="list-group-item">Tecnología Vestas V150 de última generación</li>
-              <li class="list-group-item">Equipo técnico certificado internacionalmente</li>
-              <li class="list-group-item">Acuerdos de compra de energía a largo plazo</li>
+            <h3 class="card-title">Venfort</h3>
+            <p class="card-text">20.7 MW - Guanacaste, Costa Rica</p>
+            <ul class="list-unstyled">
+              <li><strong>Estado:</strong> Permiso ambiental obtenido</li>
+              <li><strong>Conexión:</strong> Pendiente</li>
             </ul>
+            <button class="btn btn-primary" (click)="openModal('venfort')">Ver Detalles</button>
           </div>
         </div>
       </div>
 
-      <!-- Oportunidades -->
+      <!-- Proyecto Santa Elena -->
       <div class="col-md-4">
         <div class="card h-100 animate-on-scroll">
-          <div class="card-header bg-success text-white">
-            <h4><i class="fas fa-chart-line me-2"></i>Oportunidades</h4>
-          </div>
+          <img src="assets/images/proyecto-santa-elena.jpg" class="card-img-top" alt="Proyecto Santa Elena">
           <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Expansión de capacidad en fase II (2025)</li>
-              <li class="list-group-item">Integración con red eléctrica nacional</li>
-              <li class="list-group-item">Desarrollo de programas comunitarios</li>
-              <li class="list-group-item">Potencial para energía híbrida solar-eólica</li>
+            <h3 class="card-title">Santa Elena</h3>
+            <p class="card-text">20.7 MW - Guanacaste, Costa Rica</p>
+            <ul class="list-unstyled">
+              <li><strong>Estado:</strong> Permiso ambiental pendiente</li>
+              <li><strong>Conexión:</strong> Pendiente</li>
             </ul>
+            <button class="btn btn-primary" (click)="openModal('santaElena')">Ver Detalles</button>
           </div>
         </div>
       </div>
 
-      <!-- Riesgos -->
+      <!-- Proyecto Limonal -->
       <div class="col-md-4">
         <div class="card h-100 animate-on-scroll">
-          <div class="card-header bg-warning text-dark">
-            <h4><i class="fas fa-exclamation-triangle me-2"></i>Riesgos</h4>
-          </div>
+          <img src="assets/images/proyecto-limonal.jpg" class="card-img-top" alt="Proyecto Limonal">
           <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Variabilidad climática estacional</li>
-              <li class="list-group-item">Regulaciones ambientales cambiantes</li>
-              <li class="list-group-item">Costos de mantenimiento preventivo</li>
-              <li class="list-group-item">Competencia en subastas energéticas</li>
+            <h3 class="card-title">Limonal</h3>
+            <p class="card-text">20.7 MW - Guanacaste, Costa Rica</p>
+            <ul class="list-unstyled">
+              <li><strong>Estado:</strong> Opciones de tierra aseguradas</li>
+              <li><strong>Conexión:</strong> Pendiente</li>
             </ul>
+            <button class="btn btn-primary" (click)="openModal('limonal')">Ver Detalles</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Modales -->
+<div class="modal fade" [class.show]="showModal" [style.display]="showModal ? 'block' : 'none'">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">{{selectedProject?.nombre}}</h2>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="selectedProject">
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Detalles Clave</h4>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Capacidad:</strong> {{selectedProject.capacidad}}</li>
+                <li class="list-group-item"><strong>Ubicación:</strong> {{selectedProject.ubicacion}}</li>
+                <li class="list-group-item"><strong>Estado:</strong> {{selectedProject.estado}}</li>
+                <li class="list-group-item"><strong>Medición Eólica:</strong> {{selectedProject.medicion}}</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <h4>Avances Actuales</h4>
+              <div class="progress mb-3">
+                <div class="progress-bar" [style.width]="selectedProject.progreso + '%'">
+                  {{selectedProject.progreso}}%
+                </div>
+              </div>
+              <ul class="list-unstyled">
+                <li *ngFor="let item of selectedProject.detalles">
+                  <i class="fas fa-check-circle text-success me-2"></i>{{item}}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4" *ngIf="selectedProject.contratos">
+            <h4>Contratos y Acuerdos</h4>
+            <div class="accordion">
+              <div class="accordion-item" *ngFor="let contrato of selectedProject.contratos">
+                <h5 class="accordion-header">
+                  <button class="accordion-button">{{contrato.titulo}}</button>
+                </h5>
+                <div class="accordion-body">
+                  <ul>
+                    <li *ngFor="let detalle of contrato.detalles">{{detalle}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Sección Atributos -->
 <section id="atributos" class="section py-5">
@@ -116,42 +197,146 @@
   </div>
 </section>
 
-<!-- INFO -->
-
-<section id="informacion" class="section py-5">
+<!-- Sección Impacto y Operaciones -->
+<section id="operaciones" class="section py-5">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h2 class="animate-on-scroll">Impacto y Operaciones</h2>
+    <h2 class="text-center mb-5 animate-on-scroll">Operaciones Técnicas</h2>
+    
+    <div class="row g-4">
+      <!-- Especificaciones Técnicas -->
+      <div class="col-md-4">
+        <div class="card h-100 animate-on-scroll">
+          <div class="card-header bg-primary text-white">
+            <i class="fas fa-fan me-2"></i>Turbinas
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong>Modelo:</strong> Vestas V90 3.0MW<br>
+                <small>7 unidades (21MW total)</small>
+              </li>
+              <li class="mb-3">
+                <strong>Altura de Torre:</strong> 90m<br>
+                <strong>Diámetro Rotor:</strong> 90m
+              </li>
+              <li>
+                <strong>Historial Operativo:</strong><br>
+                <span class="badge bg-success">6 años</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Datos del Sitio -->
+      <div class="col-md-4">
+        <div class="card h-100 animate-on-scroll">
+          <div class="card-header bg-success text-white">
+            <i class="fas fa-map-marked-alt me-2"></i>Ubicación
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong>Área Total:</strong> 87 hectáreas<br>
+                <small>Entre dos volcanes</small>
+              </li>
+              <li class="mb-3">
+                <strong>Región:</strong> Agrícola<br>
+                <strong>Subestación:</strong> Mogote 220kV (3km)
+              </li>
+              <li>
+                <strong>Monitoreo:</strong><br>
+                <span class="badge bg-info">Torres meteorológicas desde 2000</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendimiento -->
+      <div class="col-md-4">
+        <div class="card h-100 animate-on-scroll">
+          <div class="card-header bg-warning text-dark">
+            <i class="fas fa-chart-bar me-2"></i>Rendimiento
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <h5 class="mb-1">11.4 m/s</h5>
+              <small>Velocidad promedio del viento a 90m</small>
+            </div>
+            <div class="mb-3">
+              <h5 class="mb-1">50.5% NCF</h5>
+              <small>Factor de capacidad neto (5 años)</small>
+            </div>
+            <div>
+              <h5 class="mb-1">99%</h5>
+              <small>Disponibilidad en temporadas críticas</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Historial Reciente -->
+    <div class="row mt-5">
+      <div class="col-12">
         <div class="content-box animate-on-scroll">
-          <h4>Datos Clave:</h4>
-          <ul class="list-icon">
-            <li><strong>Capacidad instalada:</strong> 50 MW</li>
-            <li><strong>Producción anual:</strong> 220 GWh</li>
-            <li><strong>Hogares abastecidos:</strong> +45,000</li>
-            <li><strong>Reducción de CO2:</strong> 150,000 ton/año</li>
-          </ul>
-          
-          <h4 class="mt-4">Operación Sustentable</h4>
-          <p>Nuestro parque eólico implementa un modelo de gestión ambiental que incluye:</p>
-          <ul>
-            <li>Monitoreo de fauna aviar con sistemas radar</li>
-            <li>Programas de reforestación nativa</li>
-            <li>Sistema de recolección de aguas pluviales</li>
-            <li>Mantenimiento predictivo con IA</li>
-          </ul>
+          <h4 class="mb-4"><i class="fas fa-clock-rotate-left me-2"></i>Eventos Relevantes</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker bg-primary"></div>
+              <div class="timeline-content">
+                <h6>2022 - Mantenimiento Preventivo</h6>
+                <p>Programa de reparación de bordes de ataque de aspas</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker bg-success"></div>
+              <div class="timeline-content">
+                <h6>2021-2022 - Alta Disponibilidad</h6>
+                <p>99% operatividad en temporadas de alta demanda</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker bg-danger"></div>
+              <div class="timeline-content">
+                <h6>Feb 2023 - Incidente Técnico</h6>
+                <p>Reemplazo de aspa en Turbina #4 (Vestas)</p>
+                <small class="text-muted">Reactivación: 19 Mayo 2023</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gestión Técnica -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card animate-on-scroll">
+          <div class="card-body">
+            <h5><i class="fas fa-users-gear me-2"></i>Equipo Operativo</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>Parque Linda Vista:</strong> Equipo técnico local
+              </li>
+              <li class="list-group-item">
+                <strong>Hunt Costa Rica:</strong> Soporte estratégico
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <div class="info-graphic animate-on-scroll">
-          <img src="assets/images/info-graphic.jpg" alt="Infografía operativa" class="img-fluid rounded-3 shadow">
-          <div class="graphic-overlay">
-            <div class="overlay-item" style="top: 30%; left: 20%">
-              <div class="overlay-badge">+45k Hogares</div>
-            </div>
-            <div class="overlay-item" style="top: 40%; right: 15%">
-              <div class="overlay-badge">220 GWh/año</div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="card animate-on-scroll">
+          <div class="card-body">
+            <h5><i class="fas fa-shield-halved me-2"></i>Seguridad</h5>
+            <div class="alert alert-success mb-0">
+              <i class="fas fa-check-circle me-2"></i>
+              Cero incidentes registrados
             </div>
           </div>
         </div>
@@ -159,6 +344,8 @@
     </div>
   </div>
 </section>
+
+
 <!-- Sección Contacto -->
 <section id="contacto" class="section-bg py-5">
   <div class="container">

@@ -132,18 +132,46 @@
   transform: translate(-50%, -50%);
 }
 
+/* Reemplazar el .overlay-badge anterior con: */
 .overlay-badge {
-  background: rgba(76, 175, 80, 0.9);
-  color: white;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  animation: pulse 2s infinite;
+  background: rgba(255, 255, 255, 0.95);
+  color: #2c3e50;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border: 2px solid #4CAF50;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+.overlay-badge::before {
+  content: '➤';
+  margin-right: 8px;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.overlay-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  background: #4CAF50;
+  color: white;
+}
+
+.overlay-badge:hover::before {
+  color: white;
+}
+
+/* Animación más sutil */
+@keyframes subtle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.overlay-item {
+  animation: subtle-bounce 4s infinite;
 }
