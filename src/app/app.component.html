@@ -169,30 +169,60 @@
 <!-- Sección Atributos -->
 <section id="atributos" class="section py-5">
   <div class="container">
-    <h2 class="text-center mb-5 animate-on-scroll">Atributos Clave</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="attribute-card animate-on-scroll">
-          <img src="assets/images/atributos-1.jpg" alt="Tecnología" class="img-fluid">
-          <h3 class="mt-3">Tecnología Avanzada</h3>
-          <p>Turbinas de 150m de altura con sistema de enfriamiento...</p>
+    <h2 class="text-center mb-5 animate__animated animate__fadeInDown">Potencia Clave</h2>
+    <div class="row g-4 justify-content-center">
+
+      <!-- Turbinas -->
+      <div class="col-md-4 col-6">
+        <div class="attribute-card animate__animated animate__zoomIn">
+          <div class="icon-wrapper">
+            <i class="fas fa-wind"></i>
+          </div>
+          <h3>Vestas V90</h3>
+          <div class="attribute-detail">
+            <span>3.0MW c/u</span>
+            <small>7 Turbinas</small>
+          </div>
+          <div class="hover-content">
+            <p>Altura: 90m<br>Diámetro: 90m</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="attribute-card animate-on-scroll">
-          <img src="assets/images/atributos-2.jpg" alt="Tecnología" class="img-fluid">
-          <h3 class="mt-3">Tecnología Avanzada</h3>
-          <p>Turbinas de 150m de altura con sistema de enfriamiento...</p>
+
+      <!-- Viento -->
+      <div class="col-md-4 col-6">
+        <div class="attribute-card animate__animated animate__zoomIn animate__delay-1s">
+          <div class="icon-wrapper">
+            <i class="fas fa-flag"></i>
+          </div>
+          <h3>11.4 m/s</h3>
+          <div class="attribute-detail">
+            <span>Velocidad Media</span>
+            <small>90m altura</small>
+          </div>
+          <div class="hover-content">
+            <p>Datos desde<br>2000</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="attribute-card animate-on-scroll">
-          <img src="assets/images/atributos-3.jpg" alt="Tecnología" class="img-fluid">
-          <h3 class="mt-3">Tecnología Avanzada</h3>
-          <p>Turbinas de 150m de altura con sistema de enfriamiento...</p>
+
+      <!-- Rendimiento -->
+      <div class="col-md-4 col-6">
+        <div class="attribute-card animate__animated animate__zoomIn animate__delay-2s">
+          <div class="icon-wrapper">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>50.5% NCF</h3>
+          <div class="attribute-detail">
+            <span>5 años</span>
+            <small>Consistente</small>
+          </div>
+          <div class="hover-content">
+            <p>99% disponibilidad<br>en temporada alta</p>
+          </div>
         </div>
       </div>
-      <!-- Repetir para otras tarjetas -->
+
     </div>
   </div>
 </section>
@@ -352,17 +382,68 @@
     <h2 class="text-center mb-5 animate-on-scroll">Contacto</h2>
     <div class="row">
       <div class="col-md-6">
-        <form class="animate-on-scroll">
-          <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Nombre">
+         <!-- Mensaje de Éxito -->
+         <div *ngIf="showSuccess" class="alert alert-success animate-on-scroll">
+          <i class="fas fa-check-circle me-2"></i>
+          ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+        </div>
+
+        <form #contactForm="ngForm" class="contact-form animate-on-scroll">
+          <!-- Nombre -->
+          <div class="form-group mb-4">
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+              <input type="text" 
+                     name="name"
+                     [(ngModel)]="formData.name"
+                     class="form-control"
+                     placeholder="Nombre completo"
+                     required>
+            </div>
           </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Correo electrónico">
+
+          <!-- Email -->
+          <div class="form-group mb-4">
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input type="email" 
+                     name="email"
+                     [(ngModel)]="formData.email"
+                     class="form-control"
+                     placeholder="Correo electrónico"
+                     required>
+            </div>
           </div>
-          <div class="mb-3">
-            <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+
+          <!-- Mensaje -->
+          <div class="form-group mb-4">
+            <div class="input-group">
+              <span class="input-group-text align-items-start">
+                <i class="fas fa-comment"></i>
+              </span>
+              <textarea name="message"
+                        [(ngModel)]="formData.message"
+                        class="form-control"
+                        rows="5"
+                        placeholder="Escriba su mensaje"
+                        required></textarea>
+            </div>
           </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+
+          <!-- Botón de enviar -->
+          <div class="text-center">
+            <button type="button" 
+                    class="btn btn-primary btn-lg"
+                    (click)="submitForm()"
+                    [disabled]="loading">
+              <i class="fas fa-paper-plane me-2"></i>
+              {{ loading ? 'Enviando...' : 'Enviar Mensaje' }}
+            </button>
+          </div>
         </form>
       </div>
       <div class="col-md-6 mt-4 mt-md-0">
@@ -376,5 +457,7 @@
     </div>
   </div>
 </section>
+
+
 
 <app-footer></app-footer>

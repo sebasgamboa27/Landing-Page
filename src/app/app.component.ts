@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.initScrollAnimations();
   }
+
+
+  constructor(private http: HttpClient) {}
+  
 
   initScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
@@ -119,4 +124,48 @@ export class AppComponent implements OnInit {
 Las operaciones comenzaron en julio de 2016 y el parque eólico ha operado satisfactoriamente desde entonces. El rendimiento de la generación y los costos operativos han estado dentro de las expectativas. El sitio cuenta con algunos de los vientos continuos más altos del hemisferio occidental.
 
 Nuestros principales objetivos con respecto al parque eólico Fila de Mogote son: (i) alcanzar la excelencia operativa, cumpliendo o superando los objetivos de Seguridad y Salud Ambiental (EHS); (ii) cumplir o superar los objetivos de rendimiento económico; y (iii) aumentar nuestra experiencia en el sector de las energías renovables.`
+
+
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  showSuccess = false;
+  loading = false;
+
+  submitForm() {
+    if (this.loading) return;
+    
+    this.loading = true;
+    
+    const formPayload = new FormData();
+    formPayload.append('name', this.formData.name);
+    formPayload.append('email', this.formData.email);
+    formPayload.append('message', this.formData.message);
+    
+    // Reemplaza con tu ID de Formspree
+    this.http.post('https://formspree.io/f/xeoapabz', formPayload)
+      .subscribe({
+        next: () => {
+          this.showSuccess = true;
+          this.loading = false;
+          this.formData = { name: '', email: '', message: '' };
+          
+          setTimeout(() => {
+            this.showSuccess = false;
+          }, 5000);
+        },
+        error: (err) => {
+          console.error('Error sending message:', err);
+          alert('Error al enviar el mensaje. Por favor intente nuevamente.');
+          this.loading = false;
+        }
+      });
+  }
+
+
+
 }
+
