@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   openMap() {
-    window.open('https://goo.gl/maps/ejemplo', '_blank');
+    window.open('https://www.google.pl/maps/place/Parque+E%C3%B3lico+Fila+de+Mogote/@10.6967431,-85.252715,17z/data=!3m1!4b1!4m6!3m5!1s0x8f755d520a9c0a41:0x917f9cf9f09ba5a!8m2!3d10.6967431!4d-85.2501401!16s%2Fg%2F11rv1kmd5k?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D', '_blank');
   }
 
   @HostListener('window:scroll', ['$event'])

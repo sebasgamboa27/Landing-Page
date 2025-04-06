@@ -1,17 +1,32 @@
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="assets/images/logo.png" alt="Fila de Mogote" class="logo">
+      <img src="assets/images/logo.jpg" alt="Logo" class="logo-img">
+      Fila de Mogote
     </a>
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed">
+    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div [class.collapse]="isCollapsed" class="navbar-collapse">
+    <div class="collapse navbar-collapse" [class.show]="!isCollapsed">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#proyecto">Proyecto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#energia">Energía</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('hero')">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('perfil')">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('estrategia')">Estrategia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('atributos')">Atributos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('informacion')">Información</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollTo('contacto')">Contacto</a>
+        </li>
       </ul>
     </div>
   </div>

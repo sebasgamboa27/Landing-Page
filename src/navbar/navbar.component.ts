@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   isCollapsed = true;
+
+  toggleMenu() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  scrollTo(section: string) {
+    document.getElementById(section)?.scrollIntoView({
+      behavior: 'smooth'
+    });
+    if (!this.isCollapsed) {
+      this.toggleMenu();
+    }
+  }
 }
