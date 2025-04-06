@@ -1,7 +1,100 @@
-<app-navigation></app-navigation>
-<main>
-  <app-hero id="hero"></app-hero>
-  <app-caracteristicas id="caracteristicas"></app-caracteristicas>
-  <app-proyectos id="proyectos"></app-proyectos>
-  <app-contacto id="contacto"></app-contacto>
-</main>
+<app-navbar></app-navbar>
+
+<!-- Sección Hero -->
+<section id="hero" class="hero">
+  <div class="hero-content text-center">
+    <h1 class="animate__animated animate__fadeInDown">Parque Eólico Fila de Mogote</h1>
+    <p class="animate__animated animate__fadeInUp">Generando energía sostenible para Costa Rica</p>
+  </div>
+</section>
+
+<!-- Sección Perfil -->
+<section id="perfil" class="section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 animate-on-scroll">Perfil del Parque</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <img src="assets/images/perfil.jpg" alt="Vista aérea del parque" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <p class="lead">Ubicado en Bagaces, Guanacaste, el Parque Eólico Fila de Mogote...</p>
+        <div class="stats-box">
+          <h3><span class="counter">33</span> Aerogeneradores</h3>
+          <h3><span class="counter">50</span> MW de capacidad</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Estrategia -->
+<section id="estrategia" class="section-bg py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 animate-on-scroll">Estrategia Sostenible</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 animate-on-scroll">
+          <div class="card-body">
+            <h4>Fortalezas</h4>
+            <ul>
+              <li>Ubicación estratégica con vientos óptimos</li>
+              <li>Tecnología de última generación</li>
+              <li>Equipo especializado</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Repetir para Riesgos y Oportunidades -->
+    </div>
+  </div>
+</section>
+
+<!-- Sección Atributos -->
+<section id="atributos" class="section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 animate-on-scroll">Atributos Clave</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="attribute-card animate-on-scroll">
+          <img src="assets/images/atributos-1.jpg" alt="Tecnología" class="img-fluid">
+          <h3 class="mt-3">Tecnología Avanzada</h3>
+          <p>Turbinas de 150m de altura con sistema de enfriamiento...</p>
+        </div>
+      </div>
+      <!-- Repetir para otras tarjetas -->
+    </div>
+  </div>
+</section>
+
+<!-- Sección Contacto -->
+<section id="contacto" class="section-bg py-5">
+  <div class="container">
+    <h2 class="text-center mb-5 animate-on-scroll">Contacto</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form class="animate-on-scroll">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Nombre">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Correo electrónico">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="map-container animate-on-scroll">
+          <img src="assets/images/mapa.jpg" alt="Ubicación en mapa" class="img-fluid rounded">
+          <div class="map-overlay" (click)="openMap()">
+            <button class="btn btn-outline-light">Ver en Google Maps</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

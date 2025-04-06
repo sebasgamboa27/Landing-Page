@@ -1,0 +1,37 @@
+.footer {
+  background-color: #2c3e50;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer h5 {
+  color: #ecf0f1;
+  font-weight: 600;
+}
+
+.footer a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-top: 15px;
+}
+
+.social-links i {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover i {
+  color: #3498db;
+}
+
+.footer-bottom {
+  background-color: rgba(0, 0, 0, 0.2);
+}

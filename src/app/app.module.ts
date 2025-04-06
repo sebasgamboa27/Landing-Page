@@ -3,24 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroComponent } from 'src/hero/hero.component';
-import { CaracteristicasComponent } from 'src/caracteristicas/caracteristicas.component';
-import { ContactoComponent } from 'src/contacto/contacto.component';
-import { AnimateDirective } from 'src/animate.directive';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ProyectosComponent } from 'src/proyectos/proyectos.component';
-import { NavigationComponent } from 'src/navigation/navigation.component';
+import { NavbarComponent } from 'src/navbar/navbar.component';
+import { FooterComponent } from 'src/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroComponent,
-    CaracteristicasComponent,
-    ContactoComponent,
-    AnimateDirective,
-    ProyectosComponent,
-    NavigationComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
