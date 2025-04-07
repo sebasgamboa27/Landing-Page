@@ -146,7 +146,7 @@ Nuestros principales objetivos con respecto al parque eólico Fila de Mogote son
     formPayload.append('message', this.formData.message);
     
     // Reemplaza con tu ID de Formspree
-    this.http.post('https://formspree.io/f/xeoapabz', formPayload)
+    this.http.post('https://formspree.io/f/mgvapagn', formPayload)
       .subscribe({
         next: () => {
           this.showSuccess = true;
