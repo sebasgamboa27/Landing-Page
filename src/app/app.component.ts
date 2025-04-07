@@ -166,6 +166,24 @@ Nuestros principales objetivos con respecto al parque eólico Fila de Mogote son
   }
 
 
+  isActiveAlert = true;
+  
+  securityEvents = [
+    {
+      date: '2022-2023',
+      status: 'Excelente',
+      description: '0 incidentes registrados',
+      responsible: 'Equipo de seguridad Vestas'
+    },
+    {
+      date: 'Otoño 2022',
+      status: 'Mantenimiento',
+      description: 'Programa de reparación preventiva de bordes de ataque',
+      responsible: 'Técnicos certificados'
+    }
+  ];
+
+
 
 }
 
