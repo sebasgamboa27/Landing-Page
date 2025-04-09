@@ -63,7 +63,7 @@
       <!-- Proyecto Venfort -->
       <div class="col-md-4">
         <div class="card h-100 animate-on-scroll">
-          <img src="assets/images/proyecto-venfort.jpg" class="card-img-top" alt="Proyecto Venfort">
+          <img src="assets/images/atributos-1.jpg" class="card-img-top" alt="Proyecto Venfort">
           <div class="card-body">
             <h3 class="card-title">Venfort</h3>
             <p class="card-text">20.7 MW - Guanacaste, Costa Rica</p>
@@ -79,7 +79,7 @@
       <!-- Proyecto Santa Elena -->
       <div class="col-md-4">
         <div class="card h-100 animate-on-scroll">
-          <img src="assets/images/proyecto-santa-elena.jpg" class="card-img-top" alt="Proyecto Santa Elena">
+          <img src="assets/images/atributos-2.jpg" class="card-img-top" alt="Proyecto Santa Elena">
           <div class="card-body">
             <h3 class="card-title">Santa Elena</h3>
             <p class="card-text">20.7 MW - Guanacaste, Costa Rica</p>
@@ -95,7 +95,7 @@
       <!-- Proyecto Limonal -->
       <div class="col-md-4">
         <div class="card h-100 animate-on-scroll">
-          <img src="assets/images/proyecto-limonal.jpg" class="card-img-top" alt="Proyecto Limonal">
+          <img src="assets/images/atributos-3.jpg" class="card-img-top" alt="Proyecto Limonal">
           <div class="card-body">
             <h3 class="card-title">Limonal</h3>
             <p class="card-text">20.7 MW - Guanacaste, Costa Rica</p>
@@ -143,21 +143,6 @@
                   <i class="fas fa-check-circle text-success me-2"></i>{{item}}
                 </li>
               </ul>
-            </div>
-          </div>
-          <div class="mt-4" *ngIf="selectedProject.contratos">
-            <h4>Contratos y Acuerdos</h4>
-            <div class="accordion">
-              <div class="accordion-item" *ngFor="let contrato of selectedProject.contratos">
-                <h5 class="accordion-header">
-                  <button class="accordion-button">{{contrato.titulo}}</button>
-                </h5>
-                <div class="accordion-body">
-                  <ul>
-                    <li *ngFor="let detalle of contrato.detalles">{{detalle}}</li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -251,7 +236,7 @@
               </li>
               <li>
                 <strong>Historial Operativo:</strong><br>
-                <span class="badge bg-success">6 años</span>
+                <span class="badge bg-success">9 años</span>
               </li>
             </ul>
           </div>
@@ -302,25 +287,6 @@
               <h5 class="mb-1">99%</h5>
               <small>Disponibilidad en temporadas críticas</small>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Gestión Técnica -->
-    <div class="row mt-4">
-      <div class="col-md-12">
-        <div class="card animate-on-scroll">
-          <div class="card-body">
-            <h5><i class="fas fa-users-gear me-2"></i>Equipo Operativo</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                <strong>Parque Linda Vista:</strong> Equipo técnico local
-              </li>
-              <li class="list-group-item">
-                <strong>Hunt Costa Rica:</strong> Soporte estratégico
-              </li>
-            </ul>
           </div>
         </div>
       </div>

@@ -121,9 +121,7 @@ export class AppComponent implements OnInit {
 
   texto_perfil = `Fila de Mogote DCR, SRL (“Fila de Mogote”) es un parque eólico y una línea de transmisión ubicados en la provincia noroccidental de Guanacaste, Costa Rica. El parque eólico cuenta con 21 megavatios (“MW”) de capacidad instalada y una generación anual prevista de 88 gigavatios (“GWh”). Fila de Mogote vende toda su energía a la empresa eléctrica nacional de Costa Rica mediante un Contrato de Compraventa de Energía (“PPA”) que vence en mayo de 2032.
 
-Las operaciones comenzaron en julio de 2016 y el parque eólico ha operado satisfactoriamente desde entonces. El rendimiento de la generación y los costos operativos han estado dentro de las expectativas. El sitio cuenta con algunos de los vientos continuos más altos del hemisferio occidental.
-
-Nuestros principales objetivos con respecto al parque eólico Fila de Mogote son: (i) alcanzar la excelencia operativa, cumpliendo o superando los objetivos de Seguridad y Salud Ambiental (EHS); (ii) cumplir o superar los objetivos de rendimiento económico; y (iii) aumentar nuestra experiencia en el sector de las energías renovables.`
+Las operaciones comenzaron en julio de 2016 y el parque eólico ha operado satisfactoriamente desde entonces. El sitio cuenta con algunos de los vientos continuos más altos del hemisferio occidental.`
 
 
   formData = {
