@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
   proyectos = {
     venfort: {
-      nombre: 'Proyecto Venfort',
+      nombre: 'Proyecto Venfor',
       capacidad: '20.7 MW',
       ubicacion: 'Guanacaste, Costa Rica (adyacente a Fila de Mogote)',
       estado: 'Permiso ambiental obtenido',
@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
       }]
     },
     santaElena: {
-      nombre: 'Proyecto Santa Elena',
+      nombre: 'Proyecto Santa Emma',
       capacidad: '20.7 MW',
       ubicacion: 'Guanacaste, Costa Rica (2km de Fila de Mogote)',
       estado: 'En proceso de permisos',
